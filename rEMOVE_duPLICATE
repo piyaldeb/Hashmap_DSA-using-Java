@@ -1,0 +1,27 @@
+package HAshmap;
+import java.util.*;
+
+
+public class rEMOVE_duPLICATE {
+    public static ArrayList<Integer> removedupli(int[] arr){
+        ArrayList<Integer> output=new ArrayList<>();
+        HashMap<Integer,Boolean>map=new HashMap<>();
+        for(int i=0;i< arr.length;i++){
+            if(map.containsKey(arr[i])){
+                continue;
+            }else{
+                output.add(arr[i] );
+               map.put(arr[i],true );
+            }
+        }
+
+        return  output;
+    }
+    public static void main(String[] arg){
+        int[] arr =new int[]{3,1,3,4,2,4,6,8,4};
+        ArrayList<Integer> output=removedupli(arr);
+
+        System.out.print(output);
+
+    }
+}

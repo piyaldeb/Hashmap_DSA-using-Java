@@ -1,0 +1,28 @@
+package HAshmap;
+import java.util.*;
+
+
+public class Hashmap_Function {
+public  static  void main(String [] arg){
+    HashMap<String,Integer> map=new HashMap<>();
+    //insert
+    map.put("abc",5);
+    map.put("def",2);
+    //size()
+    System.out.println(map.size());
+    //presence
+    if(map.containsKey("abc")){
+        System.out.println("present");
+    }
+    //get value
+    int v=map.get("abc");
+    System.out.println(v);//will print the key of abc which one putted before
+    //remove
+    map.remove("def");
+  //iterate
+    Set<String> keys=map.keySet();
+    for(String s:keys){
+        System.out.println(s);
+    }
+}
+}

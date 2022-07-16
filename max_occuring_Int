@@ -1,0 +1,30 @@
+package HAshmap;
+import  java.util.*;
+
+public class max_occuring_Int {
+    public static void main(String[] arg) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int arr[] = new int[]{1, 3, 5, 5, 5, 56, 5, 8, 8};
+        int max = Integer.MIN_VALUE;
+        map.put(arr[0], 1);
+        int maxfreq = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            boolean exist = map.containsKey(arr[i]);
+            if (exist) {
+                int value = map.get(arr[i]);
+                map.put(arr[i], value + 1);
+            } else {
+                map.put(arr[i], 1);
+            }
+            int freq = map.get(arr[i]);
+            if (max < freq) {
+
+                max = Math.max(max, freq);
+                maxfreq = arr[i];
+
+            }
+
+        }
+        System.out.println(maxfreq);
+    }
+}

@@ -1,0 +1,26 @@
+package HAshmap;
+
+import java.util.HashMap;
+
+public class Majority_elements_II {
+    public static void main(String[] arg){
+        HashMap <Integer,Integer> map=new HashMap<>();
+        int  nums[]=new int[]{3,2,3};
+        int  n1[]=new int[]{nums.length};
+        for(int i=0;i<nums.length;i++){
+            if(map.containsKey(nums[i])){
+                map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+
+            }else{
+                map.put(nums[i],1);
+            }
+        }
+        for(int i=0;i<map.size();i++){
+            int ans= nums.length/3;
+            if(map.get(nums[i])>ans){
+                System.out.print(nums[i]+" ");
+                map.remove(nums[i]);
+            }
+        }
+    }
+}

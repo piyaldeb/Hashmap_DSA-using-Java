@@ -1,0 +1,27 @@
+package HAshmap;
+
+import java.util.HashMap;
+
+public class Majority_Element_Leetcode {
+    public  static void main(String[] arg){
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int nums[]=new int[]{3,2,3};
+        int max=Integer.MIN_VALUE;
+        int maxfrq=nums[0];
+        map.put(nums[0],1);
+        for(int i=1;i<nums.length;i++){
+            if(map.containsKey(nums[i])){
+                int value=map.get(nums[i]);
+                map.put(nums[i],value+1);
+            }else{
+                map.put(nums[i],1);
+            }
+            int freq=map.get(nums[i]);
+            if(freq>max){
+                max=Math.max(max,freq);
+                maxfrq=nums[i];
+            }
+        }
+        System.out.println(maxfrq);
+    }
+}
